@@ -19,8 +19,8 @@ public class DomElement implements Cloneable {
         this.name = name;
     }
 
-    public DomElement html(String innerHTML){
-        this.innerHTML = innerHTML;
+    public DomElement html(String ...innerHTML){
+        this.innerHTML = String.join("",innerHTML);
         return this;
     }
 
@@ -91,6 +91,9 @@ public class DomElement implements Cloneable {
     }
     public DomElement width(String value){ attr("width", value); return this;  }
     public DomElement height(String value){ attr("height", value); return this;  }
+
+    public DomElement width(int value){ attr("width", value+"px"); return this;  }
+    public DomElement height(int value){ attr("height", value+"px"); return this;  }
 
     public DomElement className(String value){
         attr("class", value);

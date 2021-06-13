@@ -16,9 +16,12 @@ public class test {
                 ),
                 body(
                         div(
-                                h1($->$.css("color", "#F00"), "Hello world"),
-                                br,
-                                element("h6", $->$.text("Custom Element"))),
+                            h1($->$.css("color", "#F00"), "Hello world"),
+                            br,
+                            element("h6", $->$.text("Custom Element"))
+                        ),
+                        img("https://cdn.interaapps.de/icon/interaapps/pastefy.png"),
+                        img($->$.width(10).height(30), "https://cdn.interaapps.de/icon/interaapps/pastefy.png"),
                         p("Hello\nWorld"),
                         ul(
                                 // Foreaches the list and sets the text of the element to the entry
