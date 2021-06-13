@@ -1,5 +1,7 @@
 package de.interaapps.web.javahtmldsl;
 
+import org.apache.commons.text.StringEscapeUtils;
+
 public class JavaHTMLDSL {
     public static String br = "<br>";
     public static String hr = "<hr>";
@@ -132,6 +134,6 @@ public class JavaHTMLDSL {
     }
 
     public static String escape(String str){
-        return DomElement.addSlashes(str);
+        return StringEscapeUtils.escapeHtml4(str);
     }
 }

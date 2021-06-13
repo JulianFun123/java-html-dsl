@@ -1,5 +1,7 @@
 
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
+import java.util.Base64;
 import java.util.List;
 
 import static de.interaapps.web.javahtmldsl.JavaHTMLDSL.*;
@@ -26,10 +28,26 @@ public class test {
                         ul(
                                 // Foreaches the list and sets the text of the element to the entry
                                 li($->$.forList(example, (item, $e)->$e.text(item)))
-                        )
+                        ),
+                        div($->$.ifCondition(false),
+                                p("i'm never getting shown")
+                        ),
+                        testComponent()
                 )
         );
 
         System.out.println(html);
+
+        // sout'ing data-url for testing
+        System.out.println("data:text/html;base64,"+ Base64.getEncoder().encodeToString(html.getBytes(StandardCharsets.UTF_8)));
+    }
+
+    public static String testComponent(){
+        return div(
+            h4("Hello World"),
+            div( $->$.css("background-color", "#54FFFF"),
+                h5("Yay")
+            )
+        );
     }
 }

@@ -107,8 +107,9 @@ public class DomElement implements Cloneable {
         return this;
     }
 
-    public void ifCondition(boolean ifCond) {
+    public DomElement ifCondition(boolean ifCond) {
         this.ifCond = ifCond;
+        return this;
     }
 
     public <T> DomElement forList(List<T> list, ForDomEditor<T> forDomEditor){
